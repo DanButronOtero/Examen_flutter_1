@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:fbejemplo/ui/product_screen.dart';
 import 'package:fbejemplo/ui/product_information.dart';
 import 'package:fbejemplo/model/product.dart';
+import 'package:fbejemplo/authentication.dart';
 
 //stf + tab
 class ListViewProduct extends StatefulWidget {
@@ -44,7 +45,7 @@ class _ListViewProductState extends State<ListViewProduct> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context2) {
     return MaterialApp(
       title: 'Product DB',
       home: Scaffold(
@@ -109,7 +110,7 @@ class _ListViewProductState extends State<ListViewProduct> {
                           onPressed: () =>
                               _navigateToProduct(context, items[position])),
                     ],
-                  )
+                  ),
                 ],
               );
             },
