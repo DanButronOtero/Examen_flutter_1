@@ -1,47 +1,40 @@
 {
-  "project_info": {
-    "project_number": "545658298295",
-    "project_id": "fbejemplo-ccd51",
-    "storage_bucket": "fbejemplo-ccd51.appspot.com"
-  },
-  "client": [
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:545658298295:android:332a14aec457a4b89b5232",
-        "android_client_info": {
-          "package_name": "com.example.fbejemplo"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "545658298295-g7unk97ulcdev9sst0rf9qoakk0f5f92.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.fbejemplo",
-            "certificate_hash": "2edc3bc045a8aca45ad07e56fb3e42df7f500983"
-          }
-        },
-        {
-          "client_id": "545658298295-0ffl5i21egk38pc2lpr8sdcn17lhdtq7.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB2OjNaXe7Fl7CbDeyPp1IMsx4PpDH7E58"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "545658298295-0ffl5i21egk38pc2lpr8sdcn17lhdtq7.apps.googleusercontent.com",
-              "client_type": 3
+    "project_info": {
+        "project_number": "151833717783",
+        "project_id": "exmen-ed0cc",
+        "storage_bucket": "exmen-ed0cc.appspot.com"
+    },
+    "client": [{
+        "client_info": {
+            "mobilesdk_app_id": "1:151833717783:android:e9c6afccdb682cf8868052",
+            "android_client_info": {
+                "package_name": "com.butron.examen"
             }
-          ]
+        },
+        "oauth_client": [{
+                "client_id": "151833717783-e4l6pnbiu773c772eatncqf7ago6dj5k.apps.googleusercontent.com",
+                "client_type": 1,
+                "android_info": {
+                    "package_name": "com.butron.examen",
+                    "certificate_hash": "c39aa644a5acde97e2a220b54572b697ebb9db88"
+                }
+            },
+            {
+                "client_id": "151833717783-vima0j3snc8ko35ric7t8c74q4fkdf2e.apps.googleusercontent.com",
+                "client_type": 3
+            }
+        ],
+        "api_key": [{
+            "current_key": "AIzaSyDxFQZiOJFHLxbO4zy0DpL7EmZvBCjMUDc"
+        }],
+        "services": {
+            "appinvite_service": {
+                "other_platform_oauth_client": [{
+                    "client_id": "151833717783-vima0j3snc8ko35ric7t8c74q4fkdf2e.apps.googleusercontent.com",
+                    "client_type": 3
+                }]
+            }
         }
-      }
-    }
-  ],
-  "configuration_version": "1"
+    }],
+    "configuration_version": "1"
 }

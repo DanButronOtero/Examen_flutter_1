@@ -12,7 +12,7 @@ class SignInPage extends StatelessWidget {
       title: 'Product DB',
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.purple,
+          backgroundColor: Colors.black,
           title: const Text('Login'),
           centerTitle: true,
         ),

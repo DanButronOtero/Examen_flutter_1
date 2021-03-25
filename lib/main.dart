@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fbejemplo/authentication.dart';
-import 'package:fbejemplo/ui/listview_product.dart';
+import 'package:fbejemplo/ui/listview_book.dart';
 import 'package:fbejemplo/ui/login.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -44,7 +44,7 @@ class AuthenticationWrapper extends StatelessWidget {
     final firebaseUser = context.watch<User>();
 
     if (firebaseUser != null) {
-      return ListViewProduct();
+      return ListViewBook();
     }
     return SignInPage();
   }
