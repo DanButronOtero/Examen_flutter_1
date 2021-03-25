@@ -167,22 +167,6 @@ class _BookInformationState extends State<BookInformation> {
                   ),
                 ),
               ),
-              Card(
-                child: Center(
-                  child: Column(
-                    children: <Widget>[
-                      new Text(
-                        "Portada : ${widget.book.portada}",
-                        style: TextStyle(fontSize: 18.0),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 8.0),
-                      ),
-                      Divider(),
-                    ],
-                  ),
-                ),
-              ),
             ],
           )),
     );
