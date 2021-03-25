@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'dart:async';
 import 'package:fbejemplo/ui/product_screen.dart';
 import 'package:fbejemplo/ui/product_information.dart';
@@ -22,6 +23,7 @@ class _ListViewProductState extends State<ListViewProduct> {
   StreamSubscription<Event> _onProductAddedSubsripction;
   //cambiar
   StreamSubscription<Event> _onProducChangedSubsripction;
+  final auth = FirebaseAuth.instance;
 
   //iniS + tab
   @override
@@ -111,6 +113,9 @@ class _ListViewProductState extends State<ListViewProduct> {
                               _navigateToProduct(context, items[position])),
                     ],
                   ),
+                  IconButton(
+                      icon: Icon(Icons.logout),
+                      onPressed: () => {auth.signOut()})
                 ],
               );
             },
