@@ -208,20 +208,10 @@ class _BookScreenState extends State<BookScreen> {
                     padding: EdgeInsets.only(top: 8.0),
                   ),
                   Divider(),
-                  TextField(
-                    controller: _portadaController,
-                    style: TextStyle(
-                        fontSize: 17.0, color: Colors.deepOrangeAccent),
-                    decoration: InputDecoration(
-                        icon: Icon(Icons.image), labelText: 'Portada'),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 8.0),
-                  ),
                   Divider(),
                   IconButton(icon: Icon(Icons.image), onPressed: getImage),
-                  IconButton(
-                      icon: Icon(Icons.image),
+                  ElevatedButton(
+                      child: Text('subir'),
                       onPressed: () => {
                             uploadFile(_image),
                           }),

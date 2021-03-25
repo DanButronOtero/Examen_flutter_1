@@ -36,6 +36,11 @@ class _BookInformationState extends State<BookInformation> {
             children: [
               Card(
                 child: Center(
+                  child: Image.network(widget.book.portada),
+                ),
+              ),
+              Card(
+                child: Center(
                   child: Column(
                     children: <Widget>[
                       new Text(

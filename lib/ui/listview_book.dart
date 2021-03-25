@@ -6,6 +6,7 @@ import 'package:fbejemplo/ui/book_screen.dart';
 import 'package:fbejemplo/ui/book_information.dart';
 import 'package:fbejemplo/model/book.dart';
 import 'package:fbejemplo/authentication.dart';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
 //stf + tab
 class ListViewBook extends StatefulWidget {
