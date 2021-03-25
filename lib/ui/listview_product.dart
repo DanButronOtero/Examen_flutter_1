@@ -52,6 +52,8 @@ class _ListViewProductState extends State<ListViewProduct> {
       title: 'Product DB',
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+              icon: Icon(Icons.logout), onPressed: () => {auth.signOut()}),
           title: Text('Product information'),
           centerTitle: true,
           backgroundColor: Colors.deepPurpleAccent,
@@ -113,9 +115,6 @@ class _ListViewProductState extends State<ListViewProduct> {
                               _navigateToProduct(context, items[position])),
                     ],
                   ),
-                  IconButton(
-                      icon: Icon(Icons.logout),
-                      onPressed: () => {auth.signOut()})
                 ],
               );
             },
