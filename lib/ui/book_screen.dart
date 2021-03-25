@@ -19,8 +19,23 @@ class BookScreen extends StatefulWidget {
 final bookReference = FirebaseDatabase.instance.reference().child('book');
 
 class _BookScreenState extends State<BookScreen> {
+  List<Book> items;
+
+  TextEditingController _tituloController;
+  TextEditingController _autorController;
+  TextEditingController _editorialController;
+  TextEditingController _publicacionController;
+  TextEditingController _emisionController;
+  TextEditingController _precioController;
+  TextEditingController _prestamosController;
+  TextEditingController _disponiblesController;
+  TextEditingController _portadaController;
   File _image;
-  Future<String> url;
+  String url;
+  void setURL(url) {
+    this.url = url;
+  }
+
   final picker = ImagePicker();
   firebase_storage.UploadTask _task;
   Future getImage() async {
@@ -36,8 +51,8 @@ class _BookScreenState extends State<BookScreen> {
   }
 
   firebase_storage.UploadTask uploadTask;
-  Future<firebase_storage.UploadTask> uploadFile(File file, String name) async {
-    name = name.trim().replaceAll("-", "");
+  firebase_storage.Reference ref;
+  Future<firebase_storage.UploadTask> uploadFile(File file) async {
     if (file == null) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('No file was selected'),
@@ -46,10 +61,10 @@ class _BookScreenState extends State<BookScreen> {
     }
 
     // Create a Reference to the file
-    firebase_storage.Reference ref = firebase_storage.FirebaseStorage.instance
+    ref = firebase_storage.FirebaseStorage.instance
         .ref()
         .child('playground')
-        .child('/' + name + '.jpg');
+        .child('/' + _tituloController.text.replaceAll("-", "") + '.jpg');
 
     final metadata = firebase_storage.SettableMetadata(
         contentType: 'image/jpeg',
@@ -60,22 +75,9 @@ class _BookScreenState extends State<BookScreen> {
     } else {
       uploadTask = ref.putFile(File(file.path), metadata);
     }
-
-    url = ref.getDownloadURL();
+    print(ref.getDownloadURL().then((value) => {setURL(value), print(value)}));
     return Future.value(uploadTask);
   }
-
-  List<Book> items;
-
-  TextEditingController _tituloController;
-  TextEditingController _autorController;
-  TextEditingController _editorialController;
-  TextEditingController _publicacionController;
-  TextEditingController _emisionController;
-  TextEditingController _precioController;
-  TextEditingController _prestamosController;
-  TextEditingController _disponiblesController;
-  TextEditingController _portadaController;
 
   @override
   void initState() {
@@ -221,8 +223,7 @@ class _BookScreenState extends State<BookScreen> {
                   IconButton(
                       icon: Icon(Icons.image),
                       onPressed: () => {
-                            uploadFile(_image, _tituloController.text),
-                            print(uploadTask.cancel())
+                            uploadFile(_image),
                           }),
                   FlatButton(
                       onPressed: () {
@@ -236,7 +237,7 @@ class _BookScreenState extends State<BookScreen> {
                             'precio': _precioController.text,
                             'prestamos': _prestamosController.text,
                             'disponibles': _disponiblesController.text,
-                            'portada': _portadaController.text,
+                            'portada': url,
                           }).then((_) {
                             Navigator.pop(context);
                           });
@@ -250,7 +251,7 @@ class _BookScreenState extends State<BookScreen> {
                             'precio': _precioController.text,
                             'prestamos': _prestamosController.text,
                             'disponibles': _disponiblesController.text,
-                            'portada': _portadaController.text,
+                            'portada': url,
                           }).then((_) {
                             Navigator.pop(context);
                           });
